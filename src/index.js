@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     catInfo.style.display = 'none';
 
     fetchCatByBreed(selectedBreedId).then(catData => {
-      catImage.src = catData.images[0].url;
+      catImage.src = catData.url;
       catName.textContent = `Breed: ${catData.breeds[0].name}`;
       catDescription.textContent = `Description: ${catData.breeds[0].description}`;
       catTemperament.textContent = `Temperament: ${catData.breeds[0].temperament}`;
