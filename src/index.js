@@ -48,9 +48,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchCatByBreed(selectedBreedId).then(catData => {
       catImage.src = catData.url;
+      if (catData.breeds && catData.breeds.length > 0) {
       catName.textContent = `Breed: ${catData.breeds[0].name}`;
       catDescription.textContent = `Description: ${catData.breeds[0].description}`;
       catTemperament.textContent = `Temperament: ${catData.breeds[0].temperament}`;
+      }else {
+        catName.textContent = 'Breed: Unknown';
+        catDescription.textContent = 'Description: Unknown';
+        catTemperament.textContent = 'Temperament: Unknown';
+      }
 
       catInfo.style.display = 'block';
       loader.style.display = 'none';
