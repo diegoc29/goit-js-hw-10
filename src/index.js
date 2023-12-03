@@ -48,17 +48,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     fetchCatByBreed(selectedBreedId).then(catData => {
       catImage.src = catData.url;
-      catName.textContent = `Breed: ${catData.breeds[0].name}`;
-      catDescription.textContent = `Description: ${catData.breeds[0].description}`;
-      catTemperament.textContent = `Temperament: ${catData.breeds[0].temperament}`;
+      catName.textContent = `Breed: ${catData.breeds ? catData.breeds[0].name : 'N/A'}`;
+      catDescription.textContent = `Description: ${catData.breeds ? catData.breeds[0].description : 'N/A'}`;
+      catTemperament.textContent = `Temperament: ${catData.breeds ? catData.breeds[0].temperament : 'N/A'}`;
       
-
       catInfo.style.display = 'block';
       loader.style.display = 'none';
-    }).catch(error => {
+   }).catch(error => {
       errorMessage.textContent = 'Error fetching cat information. Please try again.';
       errorMessage.style.display = 'block';
       loader.style.display = 'none';
-    });
+   });
   });
 });
