@@ -41,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
     breedSelect.style.display = 'block';
     loader.style.display = 'none';
   }).catch(error => {
-    errorMessage.textContent = 'Error fetching breeds. Please try again.';
+    errorMessage.textContent = '';
     errorMessage.style.display = 'block';
     if (loader){
     loader.style.display = 'none';
