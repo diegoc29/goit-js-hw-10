@@ -29,7 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const option = document.createElement('option');
       option.value = breed.id;
       option.textContent = breed.name;
-      breedSelect.appendChild(option);
+      breedSelect.appendChild(option); 
     });
 
     breedSelect.style.display = 'block';
@@ -37,14 +37,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }).catch(error => {
     errorMessage.textContent = 'Error fetching breeds. Please try again.';
     errorMessage.style.display = 'block';
+    if (loader){
     loader.style.display = 'none';
+    }
   });
 
   breedSelect.addEventListener('change', () => {
     const selectedBreedId = breedSelect.value;
 
-    loader.style.display = 'block';
-    catInfo.style.display = 'none';
+    if (loader) {
+      loader.style.display = 'block';
+    }
+      catInfo.style.display = 'none';
 
     fetchCatByBreed(selectedBreedId).then(catData => {
       catImage.src = catData.url;
