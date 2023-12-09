@@ -1,4 +1,9 @@
 import axios from 'axios';
+import SlimSelect from 'slim-select'
+
+new SlimSelect({
+  select: '#selectElement'
+})
 
 axios.defaults.headers.common['x-api-key'] = 'live_4jZIcbzJb16wtBLxdtx7HF4X002Y6CX5O21zgGXP4uSsQumoilk7xFx7o5e2K7gp';
 
@@ -65,7 +70,7 @@ document.addEventListener('DOMContentLoaded', () => {
       if (loader) {
       loader.style.display = 'none';
       }
-      
+
    });
   });
 });
