@@ -7,8 +7,12 @@
     <style>
       .loader {
         /* Estilos del cargador */
+        display: none;
+      }
+      .loading {
         display: block;
       }
+      
       #breed-select {
         /* Estilos del selector de razas */
         padding-left: 20px;
@@ -25,7 +29,7 @@
     <label for="breed-select">Select a cat breed:</label>
     <select id="breed-select"></select>
 
-    <p class="loader">Loading data, please wait...</p>
+    <p class="loader Loading">Loading data, please wait...</p>
 
     <div class="cat-info" id="cat-info" style="display: none;">
       <img id="cat-image" alt="Cat Image" width="600px">

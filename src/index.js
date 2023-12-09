@@ -52,9 +52,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const selectedBreedId = breedSelect.value;
 
     if (loader) {
-      loader.style.display = 'block';
-    }
+      loader.classList.add('loading');
       catInfo.style.display = 'none';
+    }
 
     fetchCatByBreed(selectedBreedId).then(catData => {
       catImage.src = catData.url;
@@ -63,13 +63,13 @@ document.addEventListener('DOMContentLoaded', () => {
       catTemperament.textContent = `Temperament: ${catData.breeds ? catData.breeds[0].temperament : 'N/A'}`;
       
       catInfo.style.display = 'block';
-      loader.style.display = 'none';
+      loader.classList.remove('loading');
    }).catch(error => {
       errorMessage.textContent = '';
       errorMessage.style.display = 'block';
 
       if (loader) {
-      loader.style.display = 'none';
+        loader.classList.remove('loading');
       }
 
    });
