@@ -39,12 +39,12 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     breedSelect.style.display = 'block';
-    loader.style.display = 'none';
+    loader.style.display = '';
   }).catch(error => {
     errorMessage.textContent = '';
     errorMessage.style.display = 'block';
     if (loader){
-    loader.style.display = 'none';
+    loader.style.display = '';
     }
   });
 
