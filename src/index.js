@@ -61,7 +61,9 @@ document.addEventListener('DOMContentLoaded', () => {
    }).catch(error => {
       errorMessage.textContent = 'Error fetching cat information. Please try again.';
       errorMessage.style.display = 'block';
+      if (loader){
       loader.style.display = 'none';
+      }
    });
   });
 });
