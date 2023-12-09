@@ -65,7 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
       catInfo.style.display = 'block';
       loader.style.display = 'none';
    }).catch(error => {
-      errorMessage.textContent = 'Error fetching cat information. Please try again.';
+      errorMessage.textContent = '';
       errorMessage.style.display = 'block';
 
       if (loader) {
