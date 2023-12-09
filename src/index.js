@@ -1,3 +1,4 @@
+import Notiflix from 'notiflix';
 import axios from 'axios';
 import SlimSelect from 'slim-select'
 
